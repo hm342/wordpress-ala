@@ -1,0 +1,1 @@
+2026-10-16T15:42:33+00:00 WARNING Email "admin_payment_gateway_enabled" failed to send: Could not instantiate mail function. CONTEXT: {"email_type":"admin_payment_gateway_enabled","status":"failed","recipient":"admin","WC_Gateway_COD":null}

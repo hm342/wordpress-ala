@@ -1,0 +1,634 @@
+/*
+Theme Name: Harshit Fresh Grocery
+Theme URI: http://localhost/harshit-wp
+Description: Modern, Structured Online Grocery & Supermarket Theme built for WooCommerce.
+Author: Harshit
+Author URI: http://localhost/harshit-wp
+Template: storefront
+Version: 1.3.0
+Text Domain: harshit-grocery
+*/
+
+/* -------------------------------------------------------------
+ * 1. Global Typography & Colors (Green and White Theme)
+ * ------------------------------------------------------------- */
+:root {
+  --primary-green: #155e42;
+  --primary-dark: #0f4430;
+  --primary-light: #edf7f2;
+  --primary-border: #bde0cf;
+  
+  --text-heading: #103827;
+  --text-subheading: #2d3748;
+  --text-body: #4a5568;
+  --text-muted: #64748b;
+  
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border-light: #e2e8f0;
+  --border-card: #e5e7eb;
+  
+  --sale-red: #dc2626;
+  --stock-green: #15803d;
+  --radius: 4px;
+}
+
+/* Global Font Stack */
+body, button, input, select, textarea {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  color: var(--text-body);
+  background-color: var(--bg-page);
+  line-height: 1.6;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Consistent Heading Typography */
+h1, h2, h3, h4, h5, h6,
+.site-title a,
+.page-title,
+.section-heading-row h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--text-heading) !important;
+  line-height: 1.3;
+}
+
+h1 { font-size: 26px; }
+h2 { font-size: 20px; }
+h3 { font-size: 17px; }
+h4 { font-size: 15px; }
+
+p {
+  color: var(--text-body);
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+/* Seamless spacing between hero and content */
+#content {
+  padding-top: 10px !important;
+}
+
+/* -------------------------------------------------------------
+ * 2. Top Utility Announcement Bar
+ * ------------------------------------------------------------- */
+.grocery-utility-bar {
+  background-color: #0c3020;
+  color: #c4e4d4;
+  font-size: 12px;
+  border-bottom: 1px solid #082418;
+  padding: 6px 0;
+  font-weight: 500;
+}
+.utility-bar-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.grocery-utility-bar a {
+  color: #d8f1e4;
+  text-decoration: none;
+  font-weight: 600;
+}
+.grocery-utility-bar a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------
+ * 3. Site Header & Navigation
+ * ------------------------------------------------------------- */
+.site-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 0 !important;
+  margin-bottom: 0 !important;
+}
+.site-branding .site-title a {
+  color: var(--primary-green) !important;
+  font-weight: 800 !important;
+  font-size: 23px !important;
+  letter-spacing: -0.3px;
+  text-decoration: none;
+}
+.site-branding .site-description {
+  color: var(--text-muted) !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  margin-top: 2px;
+}
+.main-navigation ul.menu > li > a {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  padding: 8px 14px !important;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.main-navigation ul.menu > li > a:hover {
+  background-color: var(--primary-light) !important;
+  color: var(--primary-green) !important;
+}
+.main-navigation ul.menu > li.current-menu-item > a {
+  background-color: var(--primary-light) !important;
+  color: var(--primary-green) !important;
+}
+
+/* -------------------------------------------------------------
+ * 4. PROPER UNIFIED GREEN & WHITE HERO SECTION (On ALL Pages)
+ * ------------------------------------------------------------- */
+.site-page-hero {
+  background-color: var(--primary-green) !important;
+  background: linear-gradient(135deg, #0e3d29 0%, #155e42 55%, #1a7552 100%) !important;
+  color: #ffffff !important;
+  padding: 42px 0 38px !important;
+  margin: 0 0 28px 0 !important;
+  border-bottom: 3px solid #0d3826 !important;
+  width: 100% !important;
+}
+.site-page-hero .col-full {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.site-page-hero .hero-inner-content {
+  max-width: 800px;
+}
+.site-page-hero .hero-dept-badge {
+  display: inline-block !important;
+  background-color: rgba(0, 0, 0, 0.22) !important;
+  color: #bbf7d0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  padding: 4px 10px !important;
+  border-radius: var(--radius) !important;
+  margin-bottom: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+.site-page-hero .hero-title {
+  color: #ffffff !important;
+  font-size: 30px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  margin: 0 0 10px !important;
+  letter-spacing: -0.4px !important;
+}
+.site-page-hero .hero-subtitle {
+  color: #e2f4ea !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  max-width: 720px;
+  font-weight: 400 !important;
+}
+.site-page-hero .hero-actions {
+  display: flex !important;
+  gap: 12px !important;
+  margin-top: 20px !important;
+  flex-wrap: wrap !important;
+}
+.site-page-hero .btn-hero-primary {
+  background-color: #ffffff !important;
+  color: #124832 !important;
+  font-weight: 700 !important;
+  padding: 10px 22px !important;
+  border-radius: var(--radius) !important;
+  text-decoration: none !important;
+  font-size: 13.5px !important;
+  border: 1px solid #ffffff !important;
+  display: inline-block !important;
+}
+.site-page-hero .btn-hero-primary:hover {
+  background-color: #ecfdf5 !important;
+  color: #064e3b !important;
+}
+.site-page-hero .btn-hero-secondary {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  padding: 10px 22px !important;
+  border-radius: var(--radius) !important;
+  text-decoration: none !important;
+  font-size: 13.5px !important;
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  display: inline-block !important;
+}
+.site-page-hero .btn-hero-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: #ffffff !important;
+}
+
+/* SUPPRESS DUPLICATE TITLES: Hero is the sole authoritative header */
+.woocommerce-products-header,
+header.woocommerce-products-header,
+.page:not(.woocommerce-checkout):not(.woocommerce-cart) > #content header.entry-header:first-of-type,
+.page-template-default header.entry-header,
+header.entry-header,
+.woocommerce-breadcrumb {
+  display: none !important;
+}
+
+/* Hide duplicate product title in single product summary since it is featured in the hero */
+.single-product .summary.entry-summary .product_title {
+  display: none !important;
+}
+
+/* -------------------------------------------------------------
+ * 5. Standard Rectangular Buttons
+ * ------------------------------------------------------------- */
+.button, 
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"],
+.woocommerce #respond input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button {
+  background-color: var(--primary-green) !important;
+  color: #ffffff !important;
+  border-radius: var(--radius) !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  padding: 9px 16px !important;
+  border: 1px solid var(--primary-dark) !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  display: inline-block;
+  cursor: pointer;
+  line-height: normal !important;
+  transition: background-color 0.15s ease-in-out;
+}
+.button:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: #082418 !important;
+}
+
+/* -------------------------------------------------------------
+ * 6. PROPER PRODUCT CARDS WITH PROPER SALE BADGE POSITIONING
+ * ------------------------------------------------------------- */
+ul.products {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)) !important;
+  gap: 18px !important;
+  margin: 16px 0 32px !important;
+  padding: 0 !important;
+}
+ul.products::before,
+ul.products::after {
+  display: none !important;
+}
+
+/* Product Card Container */
+ul.products li.product {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-card) !important;
+  border-radius: var(--radius) !important;
+  padding: 14px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  position: relative !important; /* Anchor for absolute sale badge */
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+ul.products li.product:hover {
+  border-color: var(--primary-green) !important;
+  box-shadow: 0 4px 16px rgba(21, 94, 66, 0.1) !important;
+}
+
+/* PROPER SALE BADGE: Clean, Pinned to Top-Left Corner over Image */
+ul.products li.product .onsale,
+.woocommerce ul.products li.product .onsale,
+.woocommerce-page ul.products li.product .onsale,
+li.product .onsale {
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  right: auto !important;
+  bottom: auto !important;
+  background-color: #dc2626 !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.6px !important;
+  padding: 3px 8px !important;
+  border-radius: 3px !important;
+  border: none !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  z-index: 10 !important;
+  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.25) !important;
+  pointer-events: none !important;
+  display: inline-block !important;
+  min-height: auto !important;
+  min-width: auto !important;
+}
+
+/* Product Card Link & Image */
+ul.products li.product .woocommerce-LoopProduct-link {
+  display: flex !important;
+  flex-direction: column !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  margin-bottom: 8px !important;
+}
+ul.products li.product img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: contain !important;
+  background-color: #f8fafc;
+  border-radius: 3px !important;
+  margin: 0 0 10px !important;
+  padding: 6px !important;
+  display: block;
+}
+
+/* Product Card Category Tag */
+.product-card-category {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: var(--primary-green) !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+
+/* Product Card Title */
+ul.products li.product .woocommerce-loop-product__title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: var(--text-heading) !important;
+  margin: 0 0 6px !important;
+  line-height: 1.35 !important;
+  padding: 0 !important;
+  min-height: 40px;
+}
+ul.products li.product .woocommerce-LoopProduct-link:hover .woocommerce-loop-product__title {
+  color: var(--primary-green) !important;
+}
+
+/* Product Details (Weight / Packaging) */
+.product-card-unit {
+  font-size: 12px !important;
+  color: var(--text-muted) !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 6px !important;
+  min-height: 18px;
+}
+
+/* In-Stock Indicator */
+.product-card-stock {
+  font-size: 11px !important;
+  color: var(--stock-green) !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+}
+
+/* Product Card Price */
+ul.products li.product .price {
+  color: var(--primary-green) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  margin: 0 0 12px !important;
+  display: block !important;
+}
+ul.products li.product .price del {
+  color: #94a3b8 !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  margin-right: 6px;
+}
+ul.products li.product .price ins {
+  text-decoration: none !important;
+  color: var(--primary-green) !important;
+}
+
+/* Add to Cart Button on Card */
+ul.products li.product .button {
+  margin-top: auto !important;
+  text-align: center !important;
+  width: 100% !important;
+  display: block !important;
+  padding: 9px 12px !important;
+  font-size: 13px !important;
+}
+
+/* -------------------------------------------------------------
+ * 7. Single Product Page Specifications Table
+ * ------------------------------------------------------------- */
+.grocery-specs-box {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin: 20px 0;
+}
+.grocery-specs-box h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 12px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 8px;
+}
+.grocery-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.grocery-specs-table th {
+  text-align: left;
+  padding: 8px 12px 8px 0;
+  font-weight: 600;
+  color: var(--text-subheading);
+  width: 35%;
+  border-bottom: 1px solid #f1f5f9;
+}
+.grocery-specs-table td {
+  padding: 8px 0;
+  color: var(--text-body);
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* -------------------------------------------------------------
+ * 8. Service Grid & Department Grid
+ * ------------------------------------------------------------- */
+.grocery-service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.service-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.service-item h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0 0 6px;
+}
+.service-item p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.department-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 12px 0 32px;
+}
+.department-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius);
+  padding: 14px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-heading);
+  display: block;
+  transition: border-color 0.15s ease;
+}
+.department-card:hover {
+  border-color: var(--primary-green);
+  background-color: #fbfdfc;
+}
+.department-card .dept-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-heading);
+  display: block;
+}
+.department-card .dept-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  display: block;
+}
+
+.section-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 28px 0 14px;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 8px;
+}
+.section-heading-row h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin: 0;
+}
+.section-heading-row a {
+  color: var(--primary-green);
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+}
+.section-heading-row a:hover {
+  text-decoration: underline;
+}
+
+/* Promo Box */
+.promo-box {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 32px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.promo-box h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #14532d;
+  margin: 0 0 4px;
+}
+.promo-box p {
+  font-size: 13px;
+  color: #166534;
+  margin: 0;
+}
+.promo-code-badge {
+  background: #ffffff;
+  border: 1px dashed var(--primary-green);
+  border-radius: var(--radius);
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--primary-green);
+  padding: 6px 12px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* -------------------------------------------------------------
+ * 9. Footer
+ * ------------------------------------------------------------- */
+.site-footer {
+  background-color: #10261b !important;
+  color: #a4beaf !important;
+  padding: 40px 0 20px !important;
+  margin-top: 50px !important;
+  border-top: 2px solid #0a1b13;
+  font-size: 13px;
+}
+.site-footer a {
+  color: #d1fae5 !important;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.footer-links-grid {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+.footer-col h4 {
+  color: #ffffff !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+.site-footer .site-info {
+  border-top: 1px solid #193f2c;
+  padding-top: 18px;
+  text-align: center;
+  color: #7b9f8d !important;
+}
